@@ -2,8 +2,8 @@ const vhost = require("vhost");
 const express = require("express");
 var PORT = process.env.PORT || 4000;
 
-const app_one = require("./app_one");
-const app_two = require("./app_two");
+const app_one = require("./admin/dist/bundle");
+const app_two = require("./panel/dist/bundle");
 express()
   .use(vhost(`www.phibersoft.com`, app_one))
   .use(vhost(`admin.phibersoft.com`, app_two))
